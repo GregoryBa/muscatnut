@@ -1,3 +1,5 @@
+using Minimal.Api;
+
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
@@ -31,7 +33,36 @@ app.MapMethods("options-or-head", new[] { "HEAD", "OPTIONS" }, () =>
 var handler = () => "This is coming from a var";
 app.MapGet("handler", handler);
 
-// Another way
+// Another way, comes from Example.cs file
+app.MapGet("from-class", () => Example.SomeMethod);
+
+// int age is Required, 404 if not provided and 400 if not int provided
+app.MapGet("get-params/{age}", (int age) =>
+{
+    return $"Age provided was {age}";
+});
+
+// RESTRICTIONS:
+// Explicitly making it an int, if not int returns 404 not found
+app.MapGet("get-params/{age:int}", (int age) =>
+{
+    return $"Age provided was {age}";
+});
+
+// Restriction Regex: Only allow numbers and letters
+app.MapGet("cars/{carId:regex(^[a-z0-9]+$)}", (string carId) =>
+{
+    return $"Car id provided was: {carId}";
+});
+
+// Restriction Length: 
+app.MapGet("book/{isbn:length(13)}", (string isbn) =>
+{
+    return $"ISBM was: {isbn}";
+});
+
+// PARAMETER BINDING:
+app.MapGet("people/search")
 
 var port = Environment.GetEnvironmentVariable("PORT");
 app.Run($"https://localhost:{port}");

@@ -13,14 +13,15 @@
   <component name="ChangeListManager">
     <list default="true" id="f549b2a6-91ba-40c0-a0ab-8160a149f20f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BlazorApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BlazorApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Muscatnut.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Muscatnut.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeService/ExampleEndpoint.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeService/Mappers/GetRecipeMapper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeService/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeService/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeService/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeService/Properties/launchSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeService/Requests/WeatherForcastRequest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeService/Responses/WeatherForecastResponse.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeService/WeatherForecast.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Minimal.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Minimal.Api/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Minimal.Api/bin/Debug/net6.0/Minimal.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Minimal.Api/bin/Debug/net6.0/Minimal.Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Minimal.Api/bin/Debug/net6.0/Minimal.Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Minimal.Api/bin/Debug/net6.0/Minimal.Api.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Minimal.Api/obj/Debug/net6.0/Minimal.Api.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Minimal.Api/obj/Debug/net6.0/Minimal.Api.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Minimal.Api/obj/Debug/net6.0/Minimal.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Minimal.Api/obj/Debug/net6.0/Minimal.Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Minimal.Api/obj/Debug/net6.0/Minimal.Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Minimal.Api/obj/Debug/net6.0/Minimal.Api.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Minimal.Api/obj/Debug/net6.0/ref/Minimal.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Minimal.Api/obj/Debug/net6.0/ref/Minimal.Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Minimal.Api/obj/Debug/net6.0/refint/Minimal.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Minimal.Api/obj/Debug/net6.0/refint/Minimal.Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Minimal.Api/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/Minimal.Api/obj/staticwebassets.pack.sentinel" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +177,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1654852800816</updated>
-      <workItem from="1654852803556" duration="15121000" />
+      <workItem from="1654852803556" duration="17460000" />
     </task>
     <servers />
   </component>
