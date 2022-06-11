@@ -62,7 +62,17 @@ app.MapGet("book/{isbn:length(13)}", (string isbn) =>
 });
 
 // PARAMETER BINDING:
-app.MapGet("people/search")
+// If string is not nullable then it becomes a mandatory query paramenter
+// When string? is nullable it becomes optional query parameter
+app.MapGet("people/search", (string? searchTerm, PeopleService peopleService) =>
+{
+    if (searchTerm is null)
+    {
+        Results.NotFound();
+    }
+    
+    
+});
 
 var port = Environment.GetEnvironmentVariable("PORT");
 app.Run($"https://localhost:{port}");

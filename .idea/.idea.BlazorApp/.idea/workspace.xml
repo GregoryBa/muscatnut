@@ -14,14 +14,6 @@
     <list default="true" id="f549b2a6-91ba-40c0-a0ab-8160a149f20f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BlazorApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BlazorApp/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Minimal.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Minimal.Api/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Minimal.Api/bin/Debug/net6.0/Minimal.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Minimal.Api/bin/Debug/net6.0/Minimal.Api.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Minimal.Api/bin/Debug/net6.0/Minimal.Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Minimal.Api/bin/Debug/net6.0/Minimal.Api.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Minimal.Api/obj/Debug/net6.0/Minimal.Api.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Minimal.Api/obj/Debug/net6.0/Minimal.Api.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Minimal.Api/obj/Debug/net6.0/Minimal.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Minimal.Api/obj/Debug/net6.0/Minimal.Api.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Minimal.Api/obj/Debug/net6.0/Minimal.Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Minimal.Api/obj/Debug/net6.0/Minimal.Api.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Minimal.Api/obj/Debug/net6.0/ref/Minimal.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Minimal.Api/obj/Debug/net6.0/ref/Minimal.Api.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Minimal.Api/obj/Debug/net6.0/refint/Minimal.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Minimal.Api/obj/Debug/net6.0/refint/Minimal.Api.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Minimal.Api/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/Minimal.Api/obj/staticwebassets.pack.sentinel" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +169,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1654852800816</updated>
-      <workItem from="1654852803556" duration="17460000" />
+      <workItem from="1654852803556" duration="18416000" />
     </task>
     <servers />
   </component>
