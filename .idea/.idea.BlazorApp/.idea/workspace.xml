@@ -9,7 +9,23 @@
     <projectFile profileName="IIS Express">PaymentService/PaymentService.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f549b2a6-91ba-40c0-a0ab-8160a149f20f" name="Changes" comment="" />
+    <list default="true" id="f549b2a6-91ba-40c0-a0ab-8160a149f20f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.BlazorApp/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BlazorApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BlazorApp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorApp/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PaymentService/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/PaymentService/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecipeService/Controllers/WeatherForecastController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecipeService/Entities/Ingredient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeService/Models/Ingredient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecipeService/Entities/Recipe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeService/Models/Recipe.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecipeService/RecipeService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeService/RecipeService.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecipeService/obj/Debug/net6.0/RecipeService.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeService/obj/Debug/net6.0/RecipeService.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecipeService/obj/Debug/net6.0/RecipeService.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeService/obj/Debug/net6.0/RecipeService.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecipeService/obj/RecipeService.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeService/obj/RecipeService.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecipeService/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeService/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecipeService/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeService/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecipeService/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeService/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecipeService/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeService/obj/rider.project.restore.info" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +35,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2ANb4XUSj9tkZxBE1zJW6ZAs3cw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -131,14 +150,26 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1654852800816</updated>
-      <workItem from="1654852803556" duration="5780000" />
+      <workItem from="1654852803556" duration="11777000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
