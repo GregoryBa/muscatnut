@@ -7,24 +7,20 @@
     <projectFile profileName="IIS Express">RecipeService/RecipeService.csproj</projectFile>
     <projectFile profileName="PaymentService">PaymentService/PaymentService.csproj</projectFile>
     <projectFile profileName="IIS Express">PaymentService/PaymentService.csproj</projectFile>
+    <projectFile profileName="Minimal.Api">Minimal.Api/Minimal.Api.csproj</projectFile>
+    <projectFile profileName="IIS Express">Minimal.Api/Minimal.Api.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f549b2a6-91ba-40c0-a0ab-8160a149f20f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.BlazorApp/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BlazorApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BlazorApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorApp/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorApp/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PaymentService/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/PaymentService/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeService/Controllers/WeatherForecastController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeService/Entities/Ingredient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeService/Models/Ingredient.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeService/Entities/Recipe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeService/Models/Recipe.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeService/RecipeService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeService/RecipeService.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeService/obj/Debug/net6.0/RecipeService.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeService/obj/Debug/net6.0/RecipeService.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeService/obj/Debug/net6.0/RecipeService.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeService/obj/Debug/net6.0/RecipeService.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeService/obj/RecipeService.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeService/obj/RecipeService.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeService/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeService/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeService/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeService/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeService/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeService/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeService/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeService/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Muscatnut.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Muscatnut.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecipeService/ExampleEndpoint.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecipeService/Mappers/GetRecipeMapper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecipeService/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeService/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecipeService/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeService/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecipeService/Requests/WeatherForcastRequest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecipeService/Responses/WeatherForecastResponse.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecipeService/WeatherForecast.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +46,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.PaymentService">
+  <component name="RunManager" selected=".NET Launch Settings Profile.Minimal.Api">
     <configuration name="BlazorApp" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BlazorApp/BlazorApp.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
@@ -68,6 +64,36 @@
     </configuration>
     <configuration name="BlazorApp: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BlazorApp/BlazorApp.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="Minimal.Api" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Minimal.Api/Minimal.Api.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="Minimal.Api" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="Minimal.Api: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Minimal.Api/Minimal.Api.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
       <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -150,7 +176,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1654852800816</updated>
-      <workItem from="1654852803556" duration="11777000" />
+      <workItem from="1654852803556" duration="15121000" />
     </task>
     <servers />
   </component>
