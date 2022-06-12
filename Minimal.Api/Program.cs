@@ -1,4 +1,5 @@
 using System.Security.Claims;
+using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using Minimal.Api;
 
@@ -154,7 +155,22 @@ app.MapGet("map-point", (MapPoint point) =>
     return Results.Ok(point);
 });
 
-app.MapGet("simple-string", () => "Hello World")
+// Couple of ways doing the same thing
+app.MapGet("simple-string", () => "Hello world");
+app.MapGet("json-obj", () => new { message = "Hello world" });
+app.MapGet("ok-obj", () => Results.Ok(new {message = "Hello world"}));
+app.MapGet("ok-obj", () => Results.Json(new {message = "Hello world"}));
+app.MapGet("text-string", () => Results.Text("Hello world"));
+
+app.MapGet("stream-result", () =>
+{
+    var memoryStream = new MemoryStream();
+    var streamWriter = new StreamWriter(memoryStream, Encoding.UTF8);
+    streamWriter.Write("Hello world");
+    streamWriter.Flush();
+    memoryStream.Seek(0, SeekOrigin.Begin);
+    return Results.Stream(memoryStream);
+});
 
 var port = Environment.GetEnvironmentVariable("PORT");
 app.Run($"https://localhost:{port}");
