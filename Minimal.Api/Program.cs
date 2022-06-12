@@ -3,11 +3,16 @@ using Microsoft.AspNetCore.Mvc;
 using Minimal.Api;
 
 var builder = WebApplication.CreateBuilder(args);
-// Services
+ 
+// service registration starts here
 builder.Services.AddSingleton<PeopleService>();
 builder.Services.AddSingleton<GuidGenerator>();
 
+// Service registrations stops here
 var app = builder.Build();
+
+// MIDDLEWARE order matters
+app.UseAuthorization(); //  adding middleware has to be registered before the endpoints
 
 app.MapGet("example", () => "Hello from GET");
 app.MapPost("example", () => "Hello from POST");
@@ -135,6 +140,21 @@ app.MapGet("cancel", (CancellationToken token) =>
     return Results.Ok();
 });
 
+// Parameter binding:
+// When we want to get data from query =?5.01,51.30
+// Normally we would split them inside a controller like this:
+app.MapGet("map-point", (string latAndLong) =>
+{
+    // mapping logic
+});
+
+// Minimal API approach: In this case TryParse form MapPoint is being called
+app.MapGet("map-point", (MapPoint point) =>
+{
+    return Results.Ok(point);
+});
+
+app.MapGet("simple-string", () => "Hello World")
 
 var port = Environment.GetEnvironmentVariable("PORT");
 app.Run($"https://localhost:{port}");
