@@ -1,4 +1,5 @@
-﻿using FastEndpoints;
+﻿/*
+using FastEndpoints;
 using Microsoft.EntityFrameworkCore;
 using RecipeService.Infrastructure;
 
@@ -27,4 +28,5 @@ public class GetAllRecipesEndpoint : Endpoint<GetAllRecipesRequest, GetRecipeRes
         };
     }
 }
+*/
 

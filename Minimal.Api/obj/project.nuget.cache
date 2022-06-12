@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "4okI5aG1QApYfkQg7u3kVbhX5aenWNdAmnxf9zkAK5d2YP4IEhnESue5GBYer4MgxfCaf3VigM6+k/TtdECF8w==",
+  "dgSpecHash": "fM6X+pXxIiFAahSdNM/y+ZN4AQ3vshVtKWDUbE8z/frUg7AKUh7v6vAYzhVng9hfzdxN9DBN2X+ZvJ6+cavJHA==",
   "success": true,
   "projectFilePath": "C:\\Users\\grego\\source\\repos\\BlazorApp\\Minimal.Api\\Minimal.Api.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\grego\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\grego\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\grego\\.nuget\\packages\\swashbuckle.aspnetcore\\6.3.1\\swashbuckle.aspnetcore.6.3.1.nupkg.sha512",
+    "C:\\Users\\grego\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.3.1\\swashbuckle.aspnetcore.swagger.6.3.1.nupkg.sha512",
+    "C:\\Users\\grego\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.3.1\\swashbuckle.aspnetcore.swaggergen.6.3.1.nupkg.sha512",
+    "C:\\Users\\grego\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.3.1\\swashbuckle.aspnetcore.swaggerui.6.3.1.nupkg.sha512"
+  ],
   "logs": []
 }

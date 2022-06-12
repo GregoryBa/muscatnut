@@ -8,12 +8,20 @@ var builder = WebApplication.CreateBuilder(args);
 // service registration starts here
 builder.Services.AddSingleton<PeopleService>();
 builder.Services.AddSingleton<GuidGenerator>();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+// Customize logging
+// builder.Logging.Configure()
 
 // Service registrations stops here
 var app = builder.Build();
-
 // MIDDLEWARE order matters
-app.UseAuthorization(); //  adding middleware has to be registered before the endpoints
+//app.UseAuthorization(); 
+app.UseSwagger();
+app.UseSwaggerUI();
+
+
 
 app.MapGet("example", () => "Hello from GET");
 app.MapPost("example", () => "Hello from POST");
@@ -171,6 +179,21 @@ app.MapGet("stream-result", () =>
     memoryStream.Seek(0, SeekOrigin.Begin);
     return Results.Stream(memoryStream);
 });
+
+// Redirect
+app.MapGet("redirect", () => Results.Redirect("https://google.com"));
+
+// Trigger download for the file.txt for the user
+app.MapGet("download", () => Results.File("./myfile.txt"));
+
+app.MapGet("logging", (ILogger<Program> logger) =>
+{
+    logger.LogInformation("Hello from logger");
+    return Results.Ok();
+});
+
+
+
 
 var port = Environment.GetEnvironmentVariable("PORT");
 app.Run($"https://localhost:{port}");

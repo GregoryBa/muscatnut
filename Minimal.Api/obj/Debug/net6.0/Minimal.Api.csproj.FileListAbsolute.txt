@@ -19,3 +19,9 @@ C:\Users\grego\source\repos\BlazorApp\Minimal.Api\obj\Debug\net6.0\refint\Minima
 C:\Users\grego\source\repos\BlazorApp\Minimal.Api\obj\Debug\net6.0\Minimal.Api.pdb
 C:\Users\grego\source\repos\BlazorApp\Minimal.Api\obj\Debug\net6.0\Minimal.Api.genruntimeconfig.cache
 C:\Users\grego\source\repos\BlazorApp\Minimal.Api\obj\Debug\net6.0\ref\Minimal.Api.dll
+C:\Users\grego\source\repos\BlazorApp\Minimal.Api\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\grego\source\repos\BlazorApp\Minimal.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\grego\source\repos\BlazorApp\Minimal.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\grego\source\repos\BlazorApp\Minimal.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\grego\source\repos\BlazorApp\Minimal.Api\obj\Debug\net6.0\Minimal.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\grego\source\repos\BlazorApp\Minimal.Api\obj\Debug\net6.0\Minimal.Api.csproj.CopyComplete

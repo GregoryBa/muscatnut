@@ -49,14 +49,6 @@
               "target": "Package",
               "version": "[11.0.1, )"
             },
-            "FastEndpoints": {
-              "target": "Package",
-              "version": "[4.3.0-beta9, )"
-            },
-            "FastEndpoints.Swagger": {
-              "target": "Package",
-              "version": "[4.3.0-beta9, )"
-            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.0-preview.4.22229.2, )"
