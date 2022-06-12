@@ -1,6 +1,12 @@
+using System.Security.Claims;
+using Microsoft.AspNetCore.Mvc;
 using Minimal.Api;
 
 var builder = WebApplication.CreateBuilder(args);
+// Services
+builder.Services.AddSingleton<PeopleService>();
+builder.Services.AddSingleton<GuidGenerator>();
+
 var app = builder.Build();
 
 app.MapGet("example", () => "Hello from GET");
@@ -62,7 +68,7 @@ app.MapGet("book/{isbn:length(13)}", (string isbn) =>
 });
 
 // PARAMETER BINDING:
-// If string is not nullable then it becomes a mandatory query paramenter
+// If string is not nullable then it becomes a mandatory query parameter
 // When string? is nullable it becomes optional query parameter
 app.MapGet("people/search", (string? searchTerm, PeopleService peopleService) =>
 {
@@ -70,9 +76,65 @@ app.MapGet("people/search", (string? searchTerm, PeopleService peopleService) =>
     {
         Results.NotFound();
     }
-    
-    
+
+    var results = peopleService.Search(searchTerm);
+    return Results.Ok(results);
 });
+
+// You don't need to specify where does it come from but you can:
+app.MapGet("mix/{routeParam}", 
+    (string routeParam, int queryParam, GuidGenerator guidGenerator) =>
+    {
+        return $"{routeParam} {queryParam} {guidGenerator.NewGuid}";
+    });
+
+app.MapGet("mix2/{routeParam}", (
+        [FromRoute] string routeParam,
+        [FromQuery(Name = "query")] int queryParam,
+        [FromServices] GuidGenerator guidGenerator,
+        [FromHeader(Name = "Accept-Encoding")] string encoding) =>
+    {
+        return $"{routeParam} {queryParam} {guidGenerator.NewGuid} {encoding}";
+    });
+
+app.MapPost("people", (Person person) =>
+{
+    return Results.Ok(person);
+});
+
+// Special parameters:
+// context = the same as HttpContext. You don't need to specify it
+app.MapGet("httpcontext-1", async context =>
+{
+    await context.Response.WriteAsync("Hello from HttpContext 1");
+});
+
+app.MapGet("httpcontext-2", async (HttpContext context) =>
+{
+    await context.Response.WriteAsync("Hello from HttpContext 1");
+});
+
+//HttpContext tells you about HttpRequest and HttpResponse
+// Using those two separately gives you more narrow definition
+app.MapGet("http", async (HttpRequest request, HttpResponse response) =>
+{
+    var queries = request.QueryString.Value;
+    await response.WriteAsync($"Hello from HttpResponse. Queries where {queries}");
+});
+
+// You can get claims from the user
+app.MapGet("claims", (ClaimsPrincipal user) =>
+{
+    var claims = user.Claims;
+    var identities = user.Identities;
+});
+
+// You can pass in cancellation token and use it for database calls or anything you need in your application
+app.MapGet("cancel", (CancellationToken token) =>
+{
+    return Results.Ok();
+});
+
 
 var port = Environment.GetEnvironmentVariable("PORT");
 app.Run($"https://localhost:{port}");
