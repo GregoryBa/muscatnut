@@ -1,8 +1,15 @@
-﻿namespace RecipeService.Entities;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
+namespace RecipeService.Entities;
+
+[Table("Recipe")]
 public class Recipe
 {
-    public int Id { get; set; }
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public Guid Id { get; set; } = Guid.NewGuid();
     public string Title { get; set; }
-    public List<Ingredient> Ingredients { get; set; } = new List<Ingredient>();
+    // public string Ingredients { get; set; }
 }

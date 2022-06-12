@@ -5,6 +5,10 @@ namespace RecipeService.Infrastructure;
 
 public class ServiceContext : DbContext
 {
+    public DbSet<Recipe> Recipes { get; set; }
+
+    public DbSet<Ingredient> Ingredients { get; set; }
+    
     public ServiceContext(DbContextOptions<ServiceContext> options) : base(options)
     {
         
@@ -22,7 +26,5 @@ public class ServiceContext : DbContext
         
         
     }
-    // enteties
-    public DbSet<Recipe> Recipes { get; set; }
-    public DbSet<Ingredient> Ingredients { get; set; }
+
 }
