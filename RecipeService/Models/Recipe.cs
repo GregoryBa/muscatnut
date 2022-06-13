@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace RecipeService.Entities;
 
@@ -13,13 +14,6 @@ public class Recipe
     public string Title { get; set; }
     public string Description { get; set; }
     public DateTime CookingTime { get; set; }
-    public List<CookingStep> RecipeSteps { get; set; } = new List<CookingStep>();
+    public string RecipeSteps { get; set; }
     public List<Ingredient> Ingredients { get; set; } = new List<Ingredient>();
-}
-
-public class CookingStep
-{
-    public int StepNumber { get; set; }
-    public string Description { get; set; }
-    public DateTime Time { get; set; }
 }
