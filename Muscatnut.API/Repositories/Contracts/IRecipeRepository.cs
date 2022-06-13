@@ -5,4 +5,6 @@ namespace RecipeService.Repositories.Contracts;
 public interface IRecipeRepository
 {
     Task<Recipe> GetRecipe(Guid id, CancellationToken cancellationToken);
+
+    Task<IEnumerable<Recipe>> GetAllRecipes(CancellationToken cancellationToken);
 }
