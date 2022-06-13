@@ -1,0 +1,12 @@
+C:\Users\grego\source\repos\BlazorApp\Recipe.Models\bin\Debug\net6.0\Recipe.Models.deps.json
+C:\Users\grego\source\repos\BlazorApp\Recipe.Models\bin\Debug\net6.0\Recipe.Models.dll
+C:\Users\grego\source\repos\BlazorApp\Recipe.Models\bin\Debug\net6.0\Recipe.Models.pdb
+C:\Users\grego\source\repos\BlazorApp\Recipe.Models\obj\Debug\net6.0\Recipe.Models.csproj.AssemblyReference.cache
+C:\Users\grego\source\repos\BlazorApp\Recipe.Models\obj\Debug\net6.0\Recipe.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\grego\source\repos\BlazorApp\Recipe.Models\obj\Debug\net6.0\Recipe.Models.AssemblyInfoInputs.cache
+C:\Users\grego\source\repos\BlazorApp\Recipe.Models\obj\Debug\net6.0\Recipe.Models.AssemblyInfo.cs
+C:\Users\grego\source\repos\BlazorApp\Recipe.Models\obj\Debug\net6.0\Recipe.Models.csproj.CoreCompileInputs.cache
+C:\Users\grego\source\repos\BlazorApp\Recipe.Models\obj\Debug\net6.0\Recipe.Models.dll
+C:\Users\grego\source\repos\BlazorApp\Recipe.Models\obj\Debug\net6.0\refint\Recipe.Models.dll
+C:\Users\grego\source\repos\BlazorApp\Recipe.Models\obj\Debug\net6.0\Recipe.Models.pdb
+C:\Users\grego\source\repos\BlazorApp\Recipe.Models\obj\Debug\net6.0\ref\Recipe.Models.dll
