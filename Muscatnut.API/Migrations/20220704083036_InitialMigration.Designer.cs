@@ -12,8 +12,8 @@ using RecipeService.Infrastructure;
 namespace RecipeService.Migrations
 {
     [DbContext(typeof(ServiceContext))]
-    [Migration("20220613110858_AddedMoreFields")]
-    partial class AddedMoreFields
+    [Migration("20220704083036_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace RecipeService.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("Muscatnut.API.Entities.Ingredient", b =>
+            modelBuilder.Entity("RecipeService.Entities.Ingredient", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -34,9 +34,18 @@ namespace RecipeService.Migrations
                     b.Property<int>("Calories")
                         .HasColumnType("int");
 
+                    b.Property<double>("Carbohydrates")
+                        .HasColumnType("float");
+
+                    b.Property<double>("Fats")
+                        .HasColumnType("float");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Protein")
+                        .HasColumnType("float");
 
                     b.Property<Guid?>("RecipeId")
                         .HasColumnType("uniqueidentifier");
@@ -48,7 +57,7 @@ namespace RecipeService.Migrations
                     b.ToTable("Ingredients");
                 });
 
-            modelBuilder.Entity("Muscatnut.API.Entities.Recipe", b =>
+            modelBuilder.Entity("RecipeService.Entities.Recipe", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -74,14 +83,14 @@ namespace RecipeService.Migrations
                     b.ToTable("Recipe");
                 });
 
-            modelBuilder.Entity("Muscatnut.API.Entities.Ingredient", b =>
+            modelBuilder.Entity("RecipeService.Entities.Ingredient", b =>
                 {
-                    b.HasOne("Muscatnut.API.Entities.Recipe", null)
+                    b.HasOne("RecipeService.Entities.Recipe", null)
                         .WithMany("Ingredients")
                         .HasForeignKey("RecipeId");
                 });
 
-            modelBuilder.Entity("Muscatnut.API.Entities.Recipe", b =>
+            modelBuilder.Entity("RecipeService.Entities.Recipe", b =>
                 {
                     b.Navigation("Ingredients");
                 });
