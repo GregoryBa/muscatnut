@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\grego\\source\\repos\\BlazorApp\\Recipe.Models\\Recipe.Models.csproj",
+      "projectUniqueName": "D:\\Projects\\Muscatnut\\Backend\\Recipe.Models\\Recipe.Models.csproj",
       "projectName": "Recipe.Models",
-      "projectPath": "C:\\Users\\grego\\source\\repos\\BlazorApp\\Recipe.Models\\Recipe.Models.csproj",
+      "projectPath": "D:\\Projects\\Muscatnut\\Backend\\Recipe.Models\\Recipe.Models.csproj",
       "packagesPath": "C:\\Users\\grego\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\grego\\source\\repos\\BlazorApp\\Recipe.Models\\obj\\",
+      "outputPath": "D:\\Projects\\Muscatnut\\Backend\\Recipe.Models\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\grego\\AppData\\Roaming\\NuGet\\NuGet.Config"

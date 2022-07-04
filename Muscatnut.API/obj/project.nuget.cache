@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cwJ4H3CUblv5ofEEMQlejMDR/May62Ao1Xj35XF1TwZPe67suNJ8x/ueh3IFn2xignDwFc3vj60MSBvHmC9FQg==",
+  "dgSpecHash": "IAgrUoOfZOZaOvBG0sDM6b/2K59DjOsfV2r0am18cYfGbThG/Dz1GJENtYbe46YlJOGH8Dqe3ItW9FkL+sN2+g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\grego\\source\\repos\\BlazorApp\\Muscatnut.API\\Muscatnut.API.csproj",
+  "projectFilePath": "D:\\Projects\\Muscatnut\\Backend\\Muscatnut.API\\Muscatnut.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\grego\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\grego\\.nuget\\packages\\azure.core\\1.6.0\\azure.core.1.6.0.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\grego\\source\\repos\\BlazorApp\\Minimal.Api\\Minimal.Api.csproj": {}
+    "D:\\Projects\\Muscatnut\\Backend\\Minimal.Api\\Minimal.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\grego\\source\\repos\\BlazorApp\\Minimal.Api\\Minimal.Api.csproj": {
+    "D:\\Projects\\Muscatnut\\Backend\\Minimal.Api\\Minimal.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\grego\\source\\repos\\BlazorApp\\Minimal.Api\\Minimal.Api.csproj",
+        "projectUniqueName": "D:\\Projects\\Muscatnut\\Backend\\Minimal.Api\\Minimal.Api.csproj",
         "projectName": "Minimal.Api",
-        "projectPath": "C:\\Users\\grego\\source\\repos\\BlazorApp\\Minimal.Api\\Minimal.Api.csproj",
+        "projectPath": "D:\\Projects\\Muscatnut\\Backend\\Minimal.Api\\Minimal.Api.csproj",
         "packagesPath": "C:\\Users\\grego\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\grego\\source\\repos\\BlazorApp\\Minimal.Api\\obj\\",
+        "outputPath": "D:\\Projects\\Muscatnut\\Backend\\Minimal.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\grego\\AppData\\Roaming\\NuGet\\NuGet.Config"

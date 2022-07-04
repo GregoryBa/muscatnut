@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jd3feG0CeWNUbXoG9izdHMtgoiabctHlSzAcq3cEC9BvLM64pRnaYMW5eVCf7LLtF/H+8h6C4+Lew40hhknEIA==",
+  "dgSpecHash": "QHTAVMX7CBouz0aeHsM/9GgfVSYjbqAU47u/y4KW4RD7S1oU3Cqwu6cTUry/8JlJtmGNn2Ef9la0Y3W1wuDesg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\grego\\source\\repos\\BlazorApp\\Minimal.Api\\Minimal.Api.csproj",
+  "projectFilePath": "D:\\Projects\\Muscatnut\\Backend\\Minimal.Api\\Minimal.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\grego\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\grego\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

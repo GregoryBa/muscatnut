@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "23S1Y/2CjtvGcD60Iksmy5qwt5JSl30aZVqDBQdLPjeS0tqI8w66Y8qwDQsX5kOL8wH/L9cyWGJeizzy+EsG1g==",
+  "dgSpecHash": "KoFeTmQlYFQHfavt9SYtTa63CDA/uietbT+Ah73/aDa3zxxPOv/BAMxBAQCpGpQvX2fsnV8oosktVX0oKb2zcg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\grego\\source\\repos\\BlazorApp\\Muscatnut.Web\\Muscatnut.Web.csproj",
+  "projectFilePath": "D:\\Projects\\Muscatnut\\Backend\\Muscatnut.Web\\Muscatnut.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\grego\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.4\\microsoft.aspnetcore.authorization.6.0.4.nupkg.sha512",
     "C:\\Users\\grego\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.4\\microsoft.aspnetcore.components.6.0.4.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HHLsMnUgQQoT3GUnqwvgiFwDkTKZfZqaJP0L+cQ4Edbs7RtcQ8LhN1+5npvx1EIehi2MzWp95zLnQgHtdsV0xg==",
+  "dgSpecHash": "2MjSbmlH033jKiHaKHzE61XCmcFkfvFdyO5ZJUJ8ggjdAebSE7XUBegrbuq6ucPxfQfHBCEXexQQhJjmkDQ4bw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\grego\\source\\repos\\BlazorApp\\Recipe.Models\\Recipe.Models.csproj",
+  "projectFilePath": "D:\\Projects\\Muscatnut\\Backend\\Recipe.Models\\Recipe.Models.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\grego\\source\\repos\\BlazorApp\\PaymentService\\PaymentService.csproj": {}
+    "D:\\Projects\\Muscatnut\\Backend\\PaymentService\\PaymentService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\grego\\source\\repos\\BlazorApp\\PaymentService\\PaymentService.csproj": {
+    "D:\\Projects\\Muscatnut\\Backend\\PaymentService\\PaymentService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\grego\\source\\repos\\BlazorApp\\PaymentService\\PaymentService.csproj",
+        "projectUniqueName": "D:\\Projects\\Muscatnut\\Backend\\PaymentService\\PaymentService.csproj",
         "projectName": "PaymentService",
-        "projectPath": "C:\\Users\\grego\\source\\repos\\BlazorApp\\PaymentService\\PaymentService.csproj",
+        "projectPath": "D:\\Projects\\Muscatnut\\Backend\\PaymentService\\PaymentService.csproj",
         "packagesPath": "C:\\Users\\grego\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\grego\\source\\repos\\BlazorApp\\PaymentService\\obj\\",
+        "outputPath": "D:\\Projects\\Muscatnut\\Backend\\PaymentService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\grego\\AppData\\Roaming\\NuGet\\NuGet.Config"

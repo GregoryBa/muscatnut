@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\grego\\source\\repos\\BlazorApp\\Muscatnut.Web\\Muscatnut.Web.csproj": {}
+    "D:\\Projects\\Muscatnut\\Backend\\Muscatnut.Web\\Muscatnut.Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\grego\\source\\repos\\BlazorApp\\Muscatnut.Web\\Muscatnut.Web.csproj": {
+    "D:\\Projects\\Muscatnut\\Backend\\Muscatnut.Web\\Muscatnut.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\grego\\source\\repos\\BlazorApp\\Muscatnut.Web\\Muscatnut.Web.csproj",
+        "projectUniqueName": "D:\\Projects\\Muscatnut\\Backend\\Muscatnut.Web\\Muscatnut.Web.csproj",
         "projectName": "Muscatnut.Web",
-        "projectPath": "C:\\Users\\grego\\source\\repos\\BlazorApp\\Muscatnut.Web\\Muscatnut.Web.csproj",
+        "projectPath": "D:\\Projects\\Muscatnut\\Backend\\Muscatnut.Web\\Muscatnut.Web.csproj",
         "packagesPath": "C:\\Users\\grego\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\grego\\source\\repos\\BlazorApp\\Muscatnut.Web\\obj\\",
+        "outputPath": "D:\\Projects\\Muscatnut\\Backend\\Muscatnut.Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\grego\\AppData\\Roaming\\NuGet\\NuGet.Config"
