@@ -11,8 +11,8 @@ public class Recipe
     public Guid Id { get; set; } = Guid.NewGuid();
     [Required]
     public string Title { get; set; }
-    public string Description { get; set; }
-    public DateTime CookingTime { get; set; }
-    public string RecipeSteps { get; set; }
+    public string? Description { get; set; }
+    public DateTime? CookingTime { get; set; }
+    public string? RecipeSteps { get; set; }
     public List<Ingredient> Ingredients { get; set; } = new List<Ingredient>();
 }
