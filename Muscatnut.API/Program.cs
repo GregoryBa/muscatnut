@@ -11,7 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ServiceContext>(options =>
     options.UseSqlServer(
-        builder.Configuration.GetConnectionString("DbConnectionString"))
+        builder.Configuration.GetConnectionString("DbConnectionString") ?? string.Empty)
     );
 builder.Services.AddSingleton<IRecipeService, RecipeService.Services.RecipeService>();
 
