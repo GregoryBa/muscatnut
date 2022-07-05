@@ -28,21 +28,9 @@ namespace RecipeService.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("Calories")
-                        .HasColumnType("int");
-
-                    b.Property<double>("Carbohydrates")
-                        .HasColumnType("float");
-
-                    b.Property<double>("Fats")
-                        .HasColumnType("float");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("Protein")
-                        .HasColumnType("float");
 
                     b.Property<Guid?>("RecipeId")
                         .HasColumnType("uniqueidentifier");
@@ -60,13 +48,7 @@ namespace RecipeService.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime?>("CookingTime")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RecipeSteps")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")

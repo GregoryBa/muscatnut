@@ -12,7 +12,7 @@ using RecipeService.Infrastructure;
 namespace RecipeService.Migrations
 {
     [DbContext(typeof(ServiceContext))]
-    [Migration("20220704083036_InitialMigration")]
+    [Migration("20220705081003_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -31,21 +31,9 @@ namespace RecipeService.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("Calories")
-                        .HasColumnType("int");
-
-                    b.Property<double>("Carbohydrates")
-                        .HasColumnType("float");
-
-                    b.Property<double>("Fats")
-                        .HasColumnType("float");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("Protein")
-                        .HasColumnType("float");
 
                     b.Property<Guid?>("RecipeId")
                         .HasColumnType("uniqueidentifier");
@@ -63,15 +51,7 @@ namespace RecipeService.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("CookingTime")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RecipeSteps")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")

@@ -3,6 +3,7 @@ using RecipeService;
 using RecipeService.Entities;
 using RecipeService.Features;
 using RecipeService.Infrastructure;
+using RecipeService.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 // Services
@@ -12,6 +13,7 @@ builder.Services.AddDbContext<ServiceContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DbConnectionString"))
     );
+builder.Services.AddSingleton<IRecipeService, RecipeService.Services.RecipeService>();
 
 var app = builder.Build();
 // Middleware
@@ -20,13 +22,41 @@ app.UseSwaggerUI();
 
 // Endpoints
 
+app.MapPost("recipe", async (Recipe recipe, IRecipeService recipeService) =>
+{
+    var created = await recipeService.CreateAsync(recipe);
+    if (!created)
+    {
+        return Results.BadRequest(new
+        {
+            errorMessage = "A recipe with this title already exists"
+        });
+        
+    }
+
+    return Results.Created($"/recipe/{recipe.Id}", recipe);
+
+    /*var title = request.Title;
+    var ingredients = request.Ingredients;
+    var recipeEntity = new Recipe() { Title = title };
+    recipeEntity.Ingredients.Select(x => request.Ingredients);
+    await context.Recipes.AddAsync(recipeEntity);
+    await context.SaveChangesAsync();
+    return Results.Ok($"{ recipeEntity.Id.ToString() }, { recipeEntity.Title }");*/
+});
+
 app.MapGet("recipe", async (ServiceContext context) =>
 {
     var recipeList = await context.Recipes.ToListAsync();
     return Results.Ok(recipeList.Select(recipe => new GetRecipeResult()
     {
         Id = recipe.Id,
-        Title = recipe.Title
+        Title = recipe.Title,
+        Ingredients = recipe.Ingredients.Select(x => new IngredientResult()
+        {
+            Id = x.Id,
+            Name = x.Name,
+        }),
     }));
 });
 
@@ -45,23 +75,11 @@ app.MapGet("recipe/{id}", async (ServiceContext context, Guid id) =>
         {
             Id = x.Id,
             Name = x.Name,
-            Calories = x.Calories,
-            Carbohydrates = x.Carbohydrates,
-            Protein = x.Protein,
-            Fats = x.Fats
         }))
     });
 });
 
-app.MapPost("recipe", async (ServiceContext context, CreateRecipeRequest request) =>
-{
-    var title = request.Title;
-    var ingredients = request.Ingredients;
-    var recipeEntity = new Recipe() { Title = title };
-    await context.Recipes.AddAsync(recipeEntity);
-    await context.SaveChangesAsync();
-    return Results.Ok($"{ recipeEntity.Id.ToString() }, { recipeEntity.Title }");
-});
+
 
 app.MapPut("recipe/{id}", async (ServiceContext context, Guid id, CreateRecipeRequest request) =>
 {

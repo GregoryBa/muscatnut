@@ -10,3 +10,15 @@ C:\Users\grego\source\repos\BlazorApp\Recipe.Models\obj\Debug\net6.0\Recipe.Mode
 C:\Users\grego\source\repos\BlazorApp\Recipe.Models\obj\Debug\net6.0\refint\Recipe.Models.dll
 C:\Users\grego\source\repos\BlazorApp\Recipe.Models\obj\Debug\net6.0\Recipe.Models.pdb
 C:\Users\grego\source\repos\BlazorApp\Recipe.Models\obj\Debug\net6.0\ref\Recipe.Models.dll
+D:\Projects\Muscatnut\Backend\Recipe.Models\bin\Debug\net6.0\Recipe.Models.deps.json
+D:\Projects\Muscatnut\Backend\Recipe.Models\bin\Debug\net6.0\Recipe.Models.dll
+D:\Projects\Muscatnut\Backend\Recipe.Models\bin\Debug\net6.0\Recipe.Models.pdb
+D:\Projects\Muscatnut\Backend\Recipe.Models\obj\Debug\net6.0\Recipe.Models.csproj.AssemblyReference.cache
+D:\Projects\Muscatnut\Backend\Recipe.Models\obj\Debug\net6.0\Recipe.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Muscatnut\Backend\Recipe.Models\obj\Debug\net6.0\Recipe.Models.AssemblyInfoInputs.cache
+D:\Projects\Muscatnut\Backend\Recipe.Models\obj\Debug\net6.0\Recipe.Models.AssemblyInfo.cs
+D:\Projects\Muscatnut\Backend\Recipe.Models\obj\Debug\net6.0\Recipe.Models.csproj.CoreCompileInputs.cache
+D:\Projects\Muscatnut\Backend\Recipe.Models\obj\Debug\net6.0\Recipe.Models.dll
+D:\Projects\Muscatnut\Backend\Recipe.Models\obj\Debug\net6.0\refint\Recipe.Models.dll
+D:\Projects\Muscatnut\Backend\Recipe.Models\obj\Debug\net6.0\Recipe.Models.pdb
+D:\Projects\Muscatnut\Backend\Recipe.Models\obj\Debug\net6.0\ref\Recipe.Models.dll

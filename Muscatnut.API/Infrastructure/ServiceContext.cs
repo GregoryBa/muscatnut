@@ -13,8 +13,6 @@ public class ServiceContext : DbContext
     {
         
     }
-    
-    
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -24,7 +22,7 @@ public class ServiceContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         
-        
     }
+
 
 }

@@ -17,9 +17,7 @@ namespace RecipeService.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CookingTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    RecipeSteps = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -32,10 +30,6 @@ namespace RecipeService.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Calories = table.Column<int>(type: "int", nullable: false),
-                    Protein = table.Column<double>(type: "float", nullable: false),
-                    Carbohydrates = table.Column<double>(type: "float", nullable: false),
-                    Fats = table.Column<double>(type: "float", nullable: false),
                     RecipeId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
