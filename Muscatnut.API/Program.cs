@@ -35,14 +35,6 @@ app.MapPost("recipe", async (Recipe recipe, IRecipeService recipeService) =>
     }
 
     return Results.Created($"/recipe/{recipe.Id}", recipe);
-
-    /*var title = request.Title;
-    var ingredients = request.Ingredients;
-    var recipeEntity = new Recipe() { Title = title };
-    recipeEntity.Ingredients.Select(x => request.Ingredients);
-    await context.Recipes.AddAsync(recipeEntity);
-    await context.SaveChangesAsync();
-    return Results.Ok($"{ recipeEntity.Id.ToString() }, { recipeEntity.Title }");*/
 });
 
 app.MapGet("recipe", async (ServiceContext context) =>
