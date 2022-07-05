@@ -16,12 +16,12 @@ builder.Services.AddDbContext<ServiceContext>(options =>
 builder.Services.AddSingleton<IRecipeService, RecipeService.Services.RecipeService>();
 
 var app = builder.Build();
+
 // Middleware
 app.UseSwagger();
 app.UseSwaggerUI();
 
 // Endpoints
-
 app.MapPost("recipe", async (Recipe recipe, IRecipeService recipeService) =>
 {
     var created = await recipeService.CreateAsync(recipe);
