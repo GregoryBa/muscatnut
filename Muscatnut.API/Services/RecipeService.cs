@@ -13,7 +13,7 @@ public class RecipeService : IRecipeService
         _context = context;
     }
 
-    public async Task<bool> CreateAsync(RecipeEntity recipeEntity)
+    public async Task<Guid?> CreateAsync(RecipeEntity recipeEntity)
     {
         /*var existingRecipe = await GetById(recipe.Id);
         if (existingRecipe is not null)
@@ -23,6 +23,7 @@ public class RecipeService : IRecipeService
         
         var newRecipe = new RecipeEntity()
         {
+            Id = Guid.NewGuid(),
             Title = recipeEntity.Title,
             Description = recipeEntity.Description,
             Ingredients = recipeEntity.Ingredients
@@ -30,7 +31,7 @@ public class RecipeService : IRecipeService
 
         await _context.Recipes.AddAsync(newRecipe);
         await _context.SaveChangesAsync();
-        return true;
+        return newRecipe.Id;
     }
 
     public Task<RecipeEntity?> GetById(Guid Id)

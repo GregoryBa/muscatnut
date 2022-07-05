@@ -34,7 +34,7 @@ app.MapPost("recipe", async (CreateRecipeRequest recipe, IRecipeService recipeSe
             Name = x.Name
         })
     });
-    if (!created)
+    if (created == null)
     {
         return Results.BadRequest(new
         {
@@ -42,7 +42,7 @@ app.MapPost("recipe", async (CreateRecipeRequest recipe, IRecipeService recipeSe
         });
     }
 
-    return Results.Created($"/recipe/{recipe.Id}", recipe);
+    return Results.Created($"/recipe/{created}", recipe);
 });
 
 app.MapGet("recipe", async (ServiceContext context) =>
@@ -61,7 +61,7 @@ app.MapGet("recipe", async (ServiceContext context) =>
     }));*/
 });
 
-app.MapGet("recipe/{id}", async (ServiceContext context, int id) =>
+app.MapGet("recipe/{id}", async (ServiceContext context, Guid id) =>
 {
     var recipe = await context.Recipes
         .Include(i => i.Ingredients)

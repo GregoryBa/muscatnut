@@ -4,7 +4,7 @@ namespace RecipeService.Services;
 
 public interface IRecipeService
 {
-    public Task<bool> CreateAsync(RecipeEntity recipeEntity);
+    public Task<Guid?> CreateAsync(RecipeEntity recipeEntity);
 
     public Task<RecipeEntity?> GetById(Guid Id);
 
