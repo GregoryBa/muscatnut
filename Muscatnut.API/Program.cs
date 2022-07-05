@@ -1,8 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using RecipeService;
-using RecipeService.Entities;
+using RecipeService.Contracts;
 using RecipeService.Features;
 using RecipeService.Infrastructure;
+using RecipeService.Models;
 using RecipeService.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,7 +14,7 @@ builder.Services.AddDbContext<ServiceContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DbConnectionString") ?? string.Empty)
     );
-builder.Services.AddSingleton<IRecipeService, RecipeService.Services.RecipeService>();
+builder.Services.AddScoped<IRecipeService, RecipeService.Services.RecipeService>();
 
 var app = builder.Build();
 
@@ -22,16 +23,23 @@ app.UseSwagger();
 app.UseSwaggerUI();
 
 // Endpoints
-app.MapPost("recipe", async (Recipe recipe, IRecipeService recipeService) =>
+app.MapPost("recipe", async (CreateRecipeRequest recipe, IRecipeService recipeService) =>
 {
-    var created = await recipeService.CreateAsync(recipe);
+    var created = await recipeService.CreateAsync(new RecipeEntity()
+    {
+        Description = recipe.Description,
+        Title = recipe.Title,
+        Ingredients = recipe.Ingredients.Select(x => new IngredientEntity()
+        {
+            Name = x.Name
+        })
+    });
     if (!created)
     {
         return Results.BadRequest(new
         {
             errorMessage = "A recipe with this title already exists"
         });
-        
     }
 
     return Results.Created($"/recipe/{recipe.Id}", recipe);
@@ -40,7 +48,8 @@ app.MapPost("recipe", async (Recipe recipe, IRecipeService recipeService) =>
 app.MapGet("recipe", async (ServiceContext context) =>
 {
     var recipeList = await context.Recipes.ToListAsync();
-    return Results.Ok(recipeList.Select(recipe => new GetRecipeResult()
+    return Results.Ok(recipeList);
+    /*.Select(recipe => new GetRecipeResult()
     {
         Id = recipe.Id,
         Title = recipe.Title,
@@ -49,16 +58,16 @@ app.MapGet("recipe", async (ServiceContext context) =>
             Id = x.Id,
             Name = x.Name,
         }),
-    }));
+    }));*/
 });
 
-app.MapGet("recipe/{id}", async (ServiceContext context, Guid id) =>
+app.MapGet("recipe/{id}", async (ServiceContext context, int id) =>
 {
     var recipe = await context.Recipes
         .Include(i => i.Ingredients)
         .FirstOrDefaultAsync(x => x.Id == id);
-    
-    Results.Ok(new GetRecipeResult()
+
+    Results.Ok(recipe); /*new GetRecipeResult()
     {
         Id = recipe.Id,
         Title = recipe.Title,
@@ -68,29 +77,29 @@ app.MapGet("recipe/{id}", async (ServiceContext context, Guid id) =>
             Id = x.Id,
             Name = x.Name,
         }))
-    });
+    });*/
 });
 
 
 
 app.MapPut("recipe/{id}", async (ServiceContext context, Guid id, CreateRecipeRequest request) =>
 {
-    var recipe = await context.Recipes.FirstOrDefaultAsync(recipe => recipe.Id == id);
+    /*var recipe = await context.Recipes.FirstOrDefaultAsync(recipe => recipe.Id == id);
     recipe.Title = request.Title;
     await context.SaveChangesAsync();
     Results.Ok(new GetRecipeResult()
     {
         Id = recipe.Id,
         Title = recipe.Title
-    });
+    });*/
 });
 
 app.MapDelete("recipe/{id}", async (ServiceContext context, Guid id) =>
 {
-    var recipeToRemove = await context.Recipes.FirstOrDefaultAsync(x => x.Id == id) ?? null;
+    /*var recipeToRemove = await context.Recipes.FirstOrDefaultAsync(x => x.Id == id) ?? null;
     context.Recipes.Remove(recipeToRemove!);
     await context.SaveChangesAsync();
-    return Results.Ok($"Recipe {recipeToRemove} deleted!");
+    return Results.Ok($"Recipe {recipeToRemove} deleted!");*/
 });
 
 var port = Environment.GetEnvironmentVariable("PORT");

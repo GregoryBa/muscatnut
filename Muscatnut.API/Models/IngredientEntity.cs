@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace RecipeService.Entities;
+namespace RecipeService.Models;
 
-public class Ingredient
+public class IngredientEntity
 {
     [Key]
     public Guid Id { get; set; } = Guid.NewGuid();

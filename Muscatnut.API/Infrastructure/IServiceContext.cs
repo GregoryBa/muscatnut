@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using RecipeService.Entities;
 
 namespace RecipeService.Infrastructure;
 

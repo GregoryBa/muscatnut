@@ -1,19 +1,19 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace RecipeService.Entities;
+namespace RecipeService.Models;
 
 [Table("Recipe")]
-public class Recipe
+public class RecipeEntity
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public Guid Id { get; set; } = Guid.NewGuid();
+    public int Id { get; set; }
     
     [Required] 
     public string Title { get; set; }
     
     public string? Description { get; set; }
 
-    public List<Ingredient> Ingredients { get; set; } = new List<Ingredient>();
+    public IEnumerable<IngredientEntity> Ingredients { get; set; } = new List<IngredientEntity>();
 }

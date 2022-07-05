@@ -15,7 +15,8 @@ namespace RecipeService.Migrations
                 name: "Recipe",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -30,22 +31,22 @@ namespace RecipeService.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    RecipeId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    RecipeEntityId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Ingredients", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Ingredients_Recipe_RecipeId",
-                        column: x => x.RecipeId,
+                        name: "FK_Ingredients_Recipe_RecipeEntityId",
+                        column: x => x.RecipeEntityId,
                         principalTable: "Recipe",
                         principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Ingredients_RecipeId",
+                name: "IX_Ingredients_RecipeEntityId",
                 table: "Ingredients",
-                column: "RecipeId");
+                column: "RecipeEntityId");
         }
 
         /// <inheritdoc />

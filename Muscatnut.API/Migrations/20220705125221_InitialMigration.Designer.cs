@@ -12,7 +12,7 @@ using RecipeService.Infrastructure;
 namespace RecipeService.Migrations
 {
     [DbContext(typeof(ServiceContext))]
-    [Migration("20220705081003_InitialMigration")]
+    [Migration("20220705125221_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -25,7 +25,7 @@ namespace RecipeService.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("RecipeService.Entities.Ingredient", b =>
+            modelBuilder.Entity("RecipeService.Models.IngredientEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -35,21 +35,23 @@ namespace RecipeService.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("RecipeId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int?>("RecipeEntityId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RecipeId");
+                    b.HasIndex("RecipeEntityId");
 
                     b.ToTable("Ingredients");
                 });
 
-            modelBuilder.Entity("RecipeService.Entities.Recipe", b =>
+            modelBuilder.Entity("RecipeService.Models.RecipeEntity", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -63,14 +65,14 @@ namespace RecipeService.Migrations
                     b.ToTable("Recipe");
                 });
 
-            modelBuilder.Entity("RecipeService.Entities.Ingredient", b =>
+            modelBuilder.Entity("RecipeService.Models.IngredientEntity", b =>
                 {
-                    b.HasOne("RecipeService.Entities.Recipe", null)
+                    b.HasOne("RecipeService.Models.RecipeEntity", null)
                         .WithMany("Ingredients")
-                        .HasForeignKey("RecipeId");
+                        .HasForeignKey("RecipeEntityId");
                 });
 
-            modelBuilder.Entity("RecipeService.Entities.Recipe", b =>
+            modelBuilder.Entity("RecipeService.Models.RecipeEntity", b =>
                 {
                     b.Navigation("Ingredients");
                 });
