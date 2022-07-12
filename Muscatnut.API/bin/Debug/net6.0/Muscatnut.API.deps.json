@@ -9,6 +9,7 @@
       "Muscatnut.API/1.0.0": {
         "dependencies": {
           "AutoMapper": "11.0.1",
+          "Hashids.net": "1.6.1",
           "Microsoft.EntityFrameworkCore": "7.0.0-preview.4.22229.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.0-preview.4.22229.2",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.0-preview.4.22229.2",
@@ -61,6 +62,14 @@
           "lib/netstandard2.0/Azure.Identity.dll": {
             "assemblyVersion": "1.3.0.0",
             "fileVersion": "1.300.20.56202"
+          }
+        }
+      },
+      "Hashids.net/1.6.1": {
+        "runtime": {
+          "lib/net6.0/Hashids.net.dll": {
+            "assemblyVersion": "1.6.1.0",
+            "fileVersion": "1.6.1.0"
           }
         }
       },
@@ -712,6 +721,13 @@
       "sha512": "sha512-l1SYfZKOFBuUFG7C2SWHmJcrQQaiXgBdVCycx4vcZQkC6efDVt7mzZ5pfJAFEJDBUq7mjRQ0RPq9ZDGdSswqMg==",
       "path": "azure.identity/1.3.0",
       "hashPath": "azure.identity.1.3.0.nupkg.sha512"
+    },
+    "Hashids.net/1.6.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RofSPjW076KWPaxCo/BOB56+lq04P0IvmFV4YtQ+agq+UXwEta269JHRhUX40SBgsRyt49s850weKfQIxeomgw==",
+      "path": "hashids.net/1.6.1",
+      "hashPath": "hashids.net.1.6.1.nupkg.sha512"
     },
     "Humanizer.Core/2.14.1": {
       "type": "package",

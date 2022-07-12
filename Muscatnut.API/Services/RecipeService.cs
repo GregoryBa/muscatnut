@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using HashidsNet;
+using Microsoft.EntityFrameworkCore;
 using RecipeService.Infrastructure;
 using RecipeService.Models;
 
@@ -7,23 +8,19 @@ namespace RecipeService.Services;
 public class RecipeService : IRecipeService
 {
     private readonly ServiceContext _context;
+    private readonly IHashids _hashids;
 
-    public RecipeService(ServiceContext context)
+
+    public RecipeService(ServiceContext context, IHashids hashids)
     {
         _context = context;
+        _hashids = hashids;
     }
 
-    public async Task<Guid?> CreateAsync(RecipeEntity recipeEntity)
+    public async Task<string> CreateAsync(RecipeEntity recipeEntity)
     {
-        /*var existingRecipe = await GetById(recipe.Id);
-        if (existingRecipe is not null)
-        {
-            return false;
-        }*/
-        
         var newRecipe = new RecipeEntity()
         {
-            Id = Guid.NewGuid(),
             Title = recipeEntity.Title,
             Description = recipeEntity.Description,
             Ingredients = recipeEntity.Ingredients
@@ -31,10 +28,10 @@ public class RecipeService : IRecipeService
 
         await _context.Recipes.AddAsync(newRecipe);
         await _context.SaveChangesAsync();
-        return newRecipe.Id;
+        return _hashids.Encode(newRecipe.Id);
     }
-
-    public Task<RecipeEntity?> GetById(Guid Id)
+    
+    public Task<RecipeEntity?> GetById(int Id)
     {
         throw new NotImplementedException();
     }

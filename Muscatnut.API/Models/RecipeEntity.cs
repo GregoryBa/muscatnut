@@ -8,12 +8,12 @@ public class RecipeEntity
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public Guid Id { get; set; }
+    public int Id { get; set; }
     
     [Required] 
     public string Title { get; set; }
     
     public string? Description { get; set; }
 
-    public IEnumerable<IngredientEntity> Ingredients { get; set; } = new List<IngredientEntity>();
+    public List<IngredientEntity> Ingredients { get; set; } = new List<IngredientEntity>();
 }

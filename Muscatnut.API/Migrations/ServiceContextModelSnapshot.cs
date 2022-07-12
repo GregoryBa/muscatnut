@@ -32,21 +32,23 @@ namespace RecipeService.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("RecipeEntityId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int?>("RecipeEntityId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("RecipeEntityId");
 
-                    b.ToTable("Ingredients");
+                    b.ToTable("IngredientEntity");
                 });
 
             modelBuilder.Entity("RecipeService.Models.RecipeEntity", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");

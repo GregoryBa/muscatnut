@@ -4,9 +4,9 @@ namespace RecipeService.Services;
 
 public interface IRecipeService
 {
-    public Task<Guid?> CreateAsync(RecipeEntity recipeEntity);
+    public Task<string> CreateAsync(RecipeEntity recipeEntity);
 
-    public Task<RecipeEntity?> GetById(Guid Id);
+    public Task<RecipeEntity?> GetById(int Id);
 
     public Task<IEnumerable<RecipeEntity>> GetAllAsync();
 

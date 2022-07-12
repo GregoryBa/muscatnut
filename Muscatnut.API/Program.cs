@@ -1,7 +1,7 @@
+using FluentValidation;
+using HashidsNet;
 using Microsoft.EntityFrameworkCore;
-using RecipeService;
 using RecipeService.Contracts;
-using RecipeService.Features;
 using RecipeService.Infrastructure;
 using RecipeService.Models;
 using RecipeService.Services;
@@ -10,11 +10,14 @@ var builder = WebApplication.CreateBuilder(args);
 // Services
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddSingleton<IHashids>(_ => new Hashids("g5GPjxX0py", 11));
 builder.Services.AddDbContext<ServiceContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DbConnectionString") ?? string.Empty)
     );
+
 builder.Services.AddScoped<IRecipeService, RecipeService.Services.RecipeService>();
+builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 
 var app = builder.Build();
 
@@ -25,24 +28,24 @@ app.UseSwaggerUI();
 // Endpoints
 app.MapPost("recipe", async (CreateRecipeRequest recipe, IRecipeService recipeService) =>
 {
-    var created = await recipeService.CreateAsync(new RecipeEntity()
+    var hashedId = await recipeService.CreateAsync(new RecipeEntity()
     {
         Description = recipe.Description,
         Title = recipe.Title,
         Ingredients = recipe.Ingredients.Select(x => new IngredientEntity()
         {
             Name = x.Name
-        })
+        }).ToList()
     });
-    if (created == null)
+    if (hashedId.Length == 0)
     {
         return Results.BadRequest(new
         {
-            errorMessage = "A recipe with this title already exists"
+            errorMessage = "Something went wrong when creating the recipe"
         });
     }
 
-    return Results.Created($"/recipe/{created}", recipe);
+    return Results.Created($"/recipe/{hashedId}", recipe);
 });
 
 app.MapGet("recipe", async (ServiceContext context) =>
@@ -61,15 +64,24 @@ app.MapGet("recipe", async (ServiceContext context) =>
     }));*/
 });
 
-app.MapGet("recipe/{id}", async (ServiceContext context, Guid id) =>
+/*
+app.MapGet("recipe/{id}", async (ServiceContext context, string id) =>
 {
-    var recipe = await context.Recipes
-        .Include(i => i.Ingredients)
-        .FirstOrDefaultAsync(x => x.Id == id);
+    /*var rawId = hashids.Decode(id);
 
-    Results.Ok(recipe); /*new GetRecipeResult()
+    if (rawId.Length == 0)
     {
-        Id = recipe.Id,
+        Results.NotFound();
+    }#1#
+    
+    /*var recipe = await context.Recipes
+        .Include(i => i.Ingredients)
+        .FirstOrDefaultAsync(x => x.Id == id);#1#
+
+    //**
+    /*Results.Ok(recipe); #1#/*new GetRecipeResult()
+    {
+        Id = recipe.Id,#2#
         Title = recipe.Title,
         Ingredients = new List<IngredientResult>(recipe.Ingredients
             .Select(x => new IngredientResult()
@@ -77,8 +89,10 @@ app.MapGet("recipe/{id}", async (ServiceContext context, Guid id) =>
             Id = x.Id,
             Name = x.Name,
         }))
-    });*/
+    });#2#
 });
+#1#
+*/
 
 
 

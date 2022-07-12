@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "IAgrUoOfZOZaOvBG0sDM6b/2K59DjOsfV2r0am18cYfGbThG/Dz1GJENtYbe46YlJOGH8Dqe3ItW9FkL+sN2+g==",
+  "dgSpecHash": "wvac5bnuhTjVnSn9CcVQ8drOz79D1MU1kZpLzaJ3UgxsGlzMBEsjeQh+k/sJQlKZTUV1HXjQMj0FCN9NnTmBPA==",
   "success": true,
   "projectFilePath": "D:\\Projects\\Muscatnut\\Backend\\Muscatnut.API\\Muscatnut.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\grego\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\grego\\.nuget\\packages\\azure.core\\1.6.0\\azure.core.1.6.0.nupkg.sha512",
     "C:\\Users\\grego\\.nuget\\packages\\azure.identity\\1.3.0\\azure.identity.1.3.0.nupkg.sha512",
+    "C:\\Users\\grego\\.nuget\\packages\\fluentvalidation\\11.1.0\\fluentvalidation.11.1.0.nupkg.sha512",
+    "C:\\Users\\grego\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.1.0\\fluentvalidation.dependencyinjectionextensions.11.1.0.nupkg.sha512",
+    "C:\\Users\\grego\\.nuget\\packages\\hashids.net\\1.6.1\\hashids.net.1.6.1.nupkg.sha512",
     "C:\\Users\\grego\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\grego\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.0.0\\microsoft.bcl.asyncinterfaces.1.0.0.nupkg.sha512",
     "C:\\Users\\grego\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

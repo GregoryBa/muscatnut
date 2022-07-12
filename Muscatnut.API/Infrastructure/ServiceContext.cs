@@ -6,8 +6,6 @@ namespace RecipeService.Infrastructure;
 public class ServiceContext : DbContext
 {
     public DbSet<RecipeEntity> Recipes { get; set; }
-
-    public DbSet<IngredientEntity> Ingredients { get; set; }
     
     public ServiceContext(DbContextOptions<ServiceContext> options) : base(options)
     {
@@ -22,10 +20,5 @@ public class ServiceContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         
-    }
-
-    public Task<int> SaveChangesAsync()
-    {
-        throw new NotImplementedException();
     }
 }
