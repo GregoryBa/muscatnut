@@ -75,3 +75,5 @@ D:\Projects\Muscatnut\Backend\Muscatnut.API\obj\Debug\net6.0\Muscatnut.API.pdb
 D:\Projects\Muscatnut\Backend\Muscatnut.API\obj\Debug\net6.0\Muscatnut.API.genruntimeconfig.cache
 D:\Projects\Muscatnut\Backend\Muscatnut.API\obj\Debug\net6.0\ref\Muscatnut.API.dll
 D:\Projects\Muscatnut\Backend\Muscatnut.API\bin\Debug\net6.0\Hashids.net.dll
+D:\Projects\Muscatnut\Backend\Muscatnut.API\bin\Debug\net6.0\FluentValidation.dll
+D:\Projects\Muscatnut\Backend\Muscatnut.API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll

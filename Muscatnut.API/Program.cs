@@ -3,7 +3,6 @@ using HashidsNet;
 using Microsoft.EntityFrameworkCore;
 using RecipeService.Contracts;
 using RecipeService.Infrastructure;
-using RecipeService.Models;
 using RecipeService.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,17 +25,16 @@ app.UseSwagger();
 app.UseSwaggerUI();
 
 // Endpoints
-app.MapPost("recipe", async (CreateRecipeRequest recipe, IRecipeService recipeService) =>
+app.MapPost("recipe", async (CreateRecipeRequest recipeRequest, IRecipeService recipeService,
+    IValidator<CreateRecipeRequest> validator) =>
 {
-    var hashedId = await recipeService.CreateAsync(new RecipeEntity()
+    var validationResult = await validator.ValidateAsync(recipeRequest);
+    if (!validationResult.IsValid)
     {
-        Description = recipe.Description,
-        Title = recipe.Title,
-        Ingredients = recipe.Ingredients.Select(x => new IngredientEntity()
-        {
-            Name = x.Name
-        }).ToList()
-    });
+        return Results.BadRequest(validationResult.Errors); // You might need to return custom contract here instead of validation result
+    }
+
+    var hashedId = await recipeService.CreateAsync(recipeRequest);
     if (hashedId.Length == 0)
     {
         return Results.BadRequest(new
@@ -45,75 +43,32 @@ app.MapPost("recipe", async (CreateRecipeRequest recipe, IRecipeService recipeSe
         });
     }
 
-    return Results.Created($"/recipe/{hashedId}", recipe);
+    return Results.Created($"/recipe/{hashedId}", recipeRequest);
 });
 
-app.MapGet("recipe", async (ServiceContext context) =>
+app.MapGet("recipe", async (IRecipeService recipeService, string? searchTerm) =>
 {
-    var recipeList = await context.Recipes.ToListAsync();
-    return Results.Ok(recipeList);
-    /*.Select(recipe => new GetRecipeResult()
+    if (searchTerm is not null && !string.IsNullOrWhiteSpace(searchTerm))
     {
-        Id = recipe.Id,
-        Title = recipe.Title,
-        Ingredients = recipe.Ingredients.Select(x => new IngredientResult()
-        {
-            Id = x.Id,
-            Name = x.Name,
-        }),
-    }));*/
+        var matchedRecipes = await recipeService.SearchByTitleAsync(searchTerm);
+        return Results.Ok(matchedRecipes);
+    }
+    var recipes = await recipeService.GetAllAsync();
+    return Results.Ok(recipes);
 });
 
-/*
-app.MapGet("recipe/{id}", async (ServiceContext context, string id) =>
+app.MapPut("recipe/{hashedId}", async (IRecipeService recipeService, string hashedId, CreateRecipeRequest recipeRequest) =>
 {
-    /*var rawId = hashids.Decode(id);
-
-    if (rawId.Length == 0)
-    {
-        Results.NotFound();
-    }#1#
-    
-    /*var recipe = await context.Recipes
-        .Include(i => i.Ingredients)
-        .FirstOrDefaultAsync(x => x.Id == id);#1#
-
-    //**
-    /*Results.Ok(recipe); #1#/*new GetRecipeResult()
-    {
-        Id = recipe.Id,#2#
-        Title = recipe.Title,
-        Ingredients = new List<IngredientResult>(recipe.Ingredients
-            .Select(x => new IngredientResult()
-        {
-            Id = x.Id,
-            Name = x.Name,
-        }))
-    });#2#
-});
-#1#
-*/
-
-
-
-app.MapPut("recipe/{id}", async (ServiceContext context, Guid id, CreateRecipeRequest request) =>
-{
-    /*var recipe = await context.Recipes.FirstOrDefaultAsync(recipe => recipe.Id == id);
-    recipe.Title = request.Title;
-    await context.SaveChangesAsync();
-    Results.Ok(new GetRecipeResult()
-    {
-        Id = recipe.Id,
-        Title = recipe.Title
-    });*/
+    var result = await recipeService.UpdateAsync(recipeRequest, hashedId);
+    if (result == false) return Results.BadRequest("Coudln't find the recipe");
+    return Results.Ok("Recipe updated");
 });
 
-app.MapDelete("recipe/{id}", async (ServiceContext context, Guid id) =>
+app.MapDelete("recipe/{hashedId}", async (IRecipeService recipeService, string hashedId) =>
 {
-    /*var recipeToRemove = await context.Recipes.FirstOrDefaultAsync(x => x.Id == id) ?? null;
-    context.Recipes.Remove(recipeToRemove!);
-    await context.SaveChangesAsync();
-    return Results.Ok($"Recipe {recipeToRemove} deleted!");*/
+    var result = await recipeService.DeleteAsync(hashedId);
+    if (result == false) return Results.BadRequest("Coudln't find the recipe");
+    return Results.Ok("Recipe updated");
 });
 
 var port = Environment.GetEnvironmentVariable("PORT");

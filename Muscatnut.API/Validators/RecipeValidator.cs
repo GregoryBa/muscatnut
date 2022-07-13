@@ -1,9 +1,10 @@
 ﻿using FluentValidation;
+using RecipeService.Contracts;
 using RecipeService.Models;
 
 namespace RecipeService.Validators;
 
-public class RecipeValidator : AbstractValidator<RecipeEntity>
+public class RecipeValidator : AbstractValidator<CreateRecipeRequest>
 {
     public RecipeValidator()
     {
