@@ -1,12 +1,18 @@
 using FluentValidation;
 using HashidsNet;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
+using RecipeService.Auth;
 using RecipeService.Contracts;
 using RecipeService.Infrastructure;
 using RecipeService.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 // Services
+builder.Services.AddAuthentication(ApiKeySchemeConstants.SchemeName)
+    .AddScheme<ApiKeyAuthSchemeOptions, ApiKeyAuthHandler>(ApiKeySchemeConstants.SchemeName, _ => { });
+builder.Services.AddAuthorization();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<IHashids>(_ => new Hashids("g5GPjxX0py", 11));
@@ -24,8 +30,12 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 
+app.UseAuthorization();
+
 // Endpoints
-app.MapPost("recipe", async (CreateRecipeRequest recipeRequest, IRecipeService recipeService,
+app.MapPost("recipe", 
+    [Authorize(AuthenticationSchemes = ApiKeySchemeConstants.SchemeName)]
+    async (CreateRecipeRequest recipeRequest, IRecipeService recipeService,
     IValidator<CreateRecipeRequest> validator) =>
 {
     var validationResult = await validator.ValidateAsync(recipeRequest);
