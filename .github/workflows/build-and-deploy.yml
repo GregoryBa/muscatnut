@@ -1,0 +1,40 @@
+name: "Build and Deply"
+
+on: [push, workflow_dispatch]
+
+env:
+  AZURE_WEBAPP_NAME: muscatnut # set this to your application name
+  AZURE_WEBAPP_PACKAGE_PATH: './published'
+  NETCORE_VERSION: '6.0.202'
+
+jobs:
+  build:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup .NET Core SDK ${{env.NETCORE_VERSION}}
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: ${{ env.NETCORE_VERSION }}
+    
+    - name: Restore
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --no-restore -c Release
+
+    - name: Publish # create a package to deply
+      run: dotnet publish --no-build -c Release -o ./published
+
+    - name: Publish app for deploy
+      run: dotnet publish --configuration Release --no-build --output ${{
+        env.AZURE_WEBAPP_PACKAGE_PATH }}
+
+    - name: 'Deploy to Azure WebApp'
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: ${{ env.AZURE_WEBAPP_NAME }}
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}

@@ -77,3 +77,10 @@ D:\Projects\Muscatnut\Backend\Muscatnut.API\obj\Debug\net6.0\ref\Muscatnut.API.d
 D:\Projects\Muscatnut\Backend\Muscatnut.API\bin\Debug\net6.0\Hashids.net.dll
 D:\Projects\Muscatnut\Backend\Muscatnut.API\bin\Debug\net6.0\FluentValidation.dll
 D:\Projects\Muscatnut\Backend\Muscatnut.API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\Projects\Muscatnut\Backend\Muscatnut.API\bin\Debug\net6.0\Muscatnut.API.staticwebassets.runtime.json
+D:\Projects\Muscatnut\Backend\Muscatnut.API\bin\Debug\net6.0\System.Web.Cors.dll
+D:\Projects\Muscatnut\Backend\Muscatnut.API\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+D:\Projects\Muscatnut\Backend\Muscatnut.API\bin\Debug\net6.0\System.Web.Http.dll
+D:\Projects\Muscatnut\Backend\Muscatnut.API\bin\Debug\net6.0\System.Web.Http.Cors.dll
+D:\Projects\Muscatnut\Backend\Muscatnut.API\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Projects\Muscatnut\Backend\Muscatnut.API\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

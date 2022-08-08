@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/79c6ec6f-e621-4c30-9c12-11ae1201c451/microsoft.web/sites/subscriptions/79c6ec6f-e621-4c30-9c12-11ae1201c451/resourceGroups/muscatnut-rg/providers/Microsoft.Web/sites/muscatnut",
+    "appService.deploySubpath": "Muscatnut.API\\bin\\Release\\net6.0\\publish"
+}
