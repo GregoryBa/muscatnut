@@ -15,11 +15,25 @@ var builder = WebApplication.CreateBuilder(new WebApplicationOptions()
     WebRootPath = "./wwwroot",
     EnvironmentName = Environment.GetEnvironmentVariable("env"),
     ApplicationName = "Muscatnut.API",
-    
 });
 
+#if RELESE
+builder.WebHost
+    .UseKestrel()
+    .ConfigureKestrel(options =>
+    {
+        options.ListenAnyIP(8080);
+    });
+#endif
 
 // Services
+builder.Services.AddCors(options => options.AddDefaultPolicy(builder =>
+{
+    builder.WithOrigins(
+        "https://localhost:3000"
+    );
+}));
+
 builder.Services.AddAuthentication(ApiKeySchemeConstants.SchemeName)
     .AddScheme<ApiKeyAuthSchemeOptions, ApiKeyAuthHandler>(ApiKeySchemeConstants.SchemeName, _ => { });
 builder.Services.AddAuthorization();
@@ -29,7 +43,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<IHashids>(_ => new Hashids("g5GPjxX0py", 11));
 builder.Services.AddDbContext<ServiceContext>(options =>
     options.UseSqlServer(
-        builder.Configuration.GetConnectionString("DbConnectionString") ?? string.Empty)
+        builder.Configuration.GetConnectionString("AzureSQLConnectionString") ?? string.Empty)
     );
 
 builder.Services.AddScoped<IRecipeService, RecipeService.Services.RecipeService>();
@@ -42,6 +56,12 @@ app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseAuthorization();
+app.UseCors(builder => builder
+    .AllowAnyOrigin()
+    //.AllowAnyMethod()
+    .AllowAnyHeader()
+//    .AllowCredentials()
+);
 
 // Endpoints
 app.MapPost("recipe",
