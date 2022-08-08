@@ -17,22 +17,21 @@ var builder = WebApplication.CreateBuilder(new WebApplicationOptions()
     ApplicationName = "Muscatnut.API",
 });
 
-#if RELESE
 builder.WebHost
     .UseKestrel()
     .ConfigureKestrel(options =>
     {
         options.ListenAnyIP(8080);
-    });
-#endif
+    })
+    .UseIIS();
 
-// Services
+/*// Services
 builder.Services.AddCors(options => options.AddDefaultPolicy(builder =>
 {
     builder.WithOrigins(
         "https://localhost:3000"
     );
-}));
+}));*/
 
 builder.Services.AddAuthentication(ApiKeySchemeConstants.SchemeName)
     .AddScheme<ApiKeyAuthSchemeOptions, ApiKeyAuthHandler>(ApiKeySchemeConstants.SchemeName, _ => { });
@@ -56,14 +55,14 @@ app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseAuthorization();
-#if RELESE
+/*#if RELESE
 app.UseCors(builder => builder
     .AllowAnyOrigin()
     //.AllowAnyMethod()
     .AllowAnyHeader()
 //    .AllowCredentials()
 );
-#endif
+#endif*/
 
 // Endpoints
 app.MapPost("recipe",
