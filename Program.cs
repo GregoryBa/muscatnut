@@ -56,12 +56,14 @@ app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseAuthorization();
+#if RELESE
 app.UseCors(builder => builder
     .AllowAnyOrigin()
     //.AllowAnyMethod()
     .AllowAnyHeader()
 //    .AllowCredentials()
 );
+#endif
 
 // Endpoints
 app.MapPost("recipe",
