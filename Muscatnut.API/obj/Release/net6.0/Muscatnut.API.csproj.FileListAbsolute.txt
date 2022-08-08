@@ -78,3 +78,9 @@ D:\Projects\Muscatnut\Backend\Muscatnut.API\obj\Release\net6.0\refint\Muscatnut.
 D:\Projects\Muscatnut\Backend\Muscatnut.API\obj\Release\net6.0\Muscatnut.API.pdb
 D:\Projects\Muscatnut\Backend\Muscatnut.API\obj\Release\net6.0\Muscatnut.API.genruntimeconfig.cache
 D:\Projects\Muscatnut\Backend\Muscatnut.API\obj\Release\net6.0\ref\Muscatnut.API.dll
+D:\Projects\Muscatnut\Backend\Muscatnut.API\bin\Release\net6.0\System.Web.Cors.dll
+D:\Projects\Muscatnut\Backend\Muscatnut.API\bin\Release\net6.0\System.Net.Http.Formatting.dll
+D:\Projects\Muscatnut\Backend\Muscatnut.API\bin\Release\net6.0\System.Web.Http.dll
+D:\Projects\Muscatnut\Backend\Muscatnut.API\bin\Release\net6.0\System.Web.Http.Cors.dll
+D:\Projects\Muscatnut\Backend\Muscatnut.API\bin\Release\net6.0\Newtonsoft.Json.dll
+D:\Projects\Muscatnut\Backend\Muscatnut.API\bin\Release\net6.0\Newtonsoft.Json.Bson.dll

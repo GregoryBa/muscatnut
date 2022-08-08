@@ -20,16 +20,16 @@ jobs:
         dotnet-version: ${{ env.NETCORE_VERSION }}
     
     - name: Restore
-      run: dotnet restore
+      run: dotnet restore .\Muscatnut.API\
 
     - name: Build
-      run: dotnet build --no-restore -c Release
+      run: dotnet build .\Muscatnut.API\ --no-restore -c Release
 
     - name: Publish # create a package to deply
-      run: dotnet publish --no-build -c Release -o ./published
+      run: dotnet publish .\Muscatnut.API\ --no-build -c Release -o .\published
 
     - name: Publish app for deploy
-      run: dotnet publish --configuration Release --no-build --output ${{
+      run: dotnet publish .\Muscatnut.API\ --configuration Release --no-build --output ${{
         env.AZURE_WEBAPP_PACKAGE_PATH }}
 
     - name: 'Deploy to Azure WebApp'
