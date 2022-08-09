@@ -228,13 +228,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Muscatnut.API/Program.cs</url>
-          <line>99</line>
+          <line>104</line>
           <properties documentPath="D:\Projects\Muscatnut\Backend\Muscatnut.API\Program.cs" initialLine="57" containingFunctionPresentation="">
             <startOffsets>
-              <option value="3045" />
+              <option value="3095" />
             </startOffsets>
             <endOffsets>
-              <option value="3046" />
+              <option value="3096" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="421" />
